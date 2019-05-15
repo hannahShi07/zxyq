@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>舆情浏览</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="../css/public.css"  media="all">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../layui/layui.js" charset="utf-8"></script>
+    <script src="../js/public.js"></script>
+</head>
+<body style="background-color: #f2f2f2;">
+<div class="mainbox">
+    <div class="po-header">
+        <div class="po-nav">
+            <div class="po-logo">
+                <a href="../index.html"><img src="../images/zaxlogowhite.png" alt=""></a>
+            </div>
+            <ul class="po-navlist">
+                <li class="nav-cell "><a href="index.html" class="">舆情浏览</a></li>
+                <li class="nav-cell actived"><a href="index-push.html" class="">舆情推送</a></li>
+            </ul>
+            <div class="userinfo togglebtn" onclick="toggleul(this)">
+                <span class="user-name">AHSR</span>
+                <span class="arrow-btn iconfont iconjiantouxia"></span>
+                <ul class="clearfix user-opt togglebox" style="display: none;">
+                    <li><a href="../personal/personal.html" class=""> <i class="iconfont iconmenu_wd"></i><i>个人中心</i></a></li>
+                    <li><a href="javascript:;"><i class="iconfont icontuichu"></i><i>退出登录</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div class="left-con">
+            <div class="ln-tit">
+                <span>全部专题</span>
+                <span class="add-specialtopic" onclick="show_stpop()"><i class="iconfont iconicon02"></i> 添加专题</span>
+            </div>
+            <ul class="st-list">
+                <li class="st-cell">
+                    <span class="st-txt">企业舆情监控</span>
+                    <i class="edit-btn iconfont iconedit1" onclick="show_stpop()"></i>
+                </li>
+                <li class="st-cell">
+                    <span class="st-txt">供应商监控</span>
+                    <i class="edit-btn iconfont iconedit1" onclick="show_stpop()"></i>
+                </li>
+                <li class="st-cell">
+                    <span class="st-txt">竞争对手监控</span>
+                    <i class="edit-btn iconfont iconedit1" onclick="show_stpop()"></i>
+                </li>
+                <li class="st-cell">
+                    <span class="st-txt">网络传媒监控</span>
+                    <i class="edit-btn iconfont iconedit1" onclick="show_stpop()"></i>
+                </li>
+                <li class="st-cell">
+                    <span class="st-txt">平安银行</span>
+                    <i class="edit-btn iconfont iconedit1" onclick="show_stpop()"></i>
+                </li>
+                <li class="st-cell">
+                    <span class="st-txt">监控机构</span>
+                    <i class="edit-btn iconfont iconedit1" onclick="show_stpop()"></i>
+                </li>
+            </ul>
+        </div>
+        <div class="right-con">
+           <div style="background-color: #fff;">
+               <div style="padding: 0 10px;">
+                   <div class="yq-con-top">
+                       <span class="tit">企业舆情监控</span>
+                   </div>
+                   <div class="yq-con-top2 clearfix">
+                       <ul class="left-items clearfix">
+                           <li class="item-tab actived">企业舆情</li>
+                           <li class="item-tab">司法风险</li>
+                       </ul>
+                       <div class="right-search">
+                           <div class="search-range togglebtn" onclick="toggleul(this)">
+                               <span class="rs-txt">全文</span>
+                               <span class="arrow-btn iconfont icontriangle-down"></span>
+                               <ul class="range-list togglebox" style="display: none">
+                                   <li class="range-cell actived">全文</li>
+                                   <li class="range-cell">标题</li>
+                                   <li class="range-cell hidecell">来源</li>
+                                   <li class="range-cell hidecell">作者</li>
+                               </ul>
+                           </div>
+                           <input type="text">
+                           <span class="search-btn iconfont iconsearch"></span>
+                       </div>
+                   </div>
+               </div>
+               <form class="layui-form tab-content actived" action="">
+                   <!--筛选条件-->
+                   <div class="filter-wrapper">
+                       <!--基本筛选条件-->
+                       <div class="filter-basic filter-condition actived">
+                           <div class="tit">
+                               <span class="txt">基本筛选条件</span>
+                               <div class="slide-control actived">
+                                   <span class="ct-state">收起</span>
+                                   <span class="arrow-btn"></span>
+                               </div>
+                           </div>
+                           <ul class="condition_list">
+                               <li class="condition-wrapper clearfix">
+                                   <div class="text_title">
+                                       <span class="pic"><img src="../images/push_config.gif" alt=""></span><span class="title">时间</span>
+                                   </div>
+                                   <div class="condition_con clearfix">
+                                       <ul class="condition_cells time_condition_cells c_radio">
+                                           <li class="c_cell actived"><span class="innercell">全部</span></li>
+                                           <li class="c_cell"><span class="innercell">当天</span></li>
+                                           <li class="c_cell"><span class="innercell">24小时</span></li>
+                                           <li class="c_cell"><span class="innercell">近7天</span></li>
+                                           <li class="c_cell custom_time"><span class="innercell">自定义</span></li>
+                                           <li class="c_cell_more customtime_wrapper">
+                                               <div class="layui-form-item">
+                                                   <div class="layui-inline">
+                                                       <div class="layui-input-inline">
+                                                           <input type="text" class="layui-input" id="test6" placeholder=" - ">
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </li>
+                               <li class="condition-wrapper clearfix">
+                                   <div class="text_title">
+                                       <span class="pic"><img src="../images/push_config.gif" alt=""></span><span class="title">倾向性</span>
+                                   </div>
+                                   <div class="condition_con clearfix">
+                                       <ul class="condition_cells c_multi">
+                                           <li class="c_cell actived"><span class="innercell">全部</span></li>
+                                           <li class="c_cell"><span class="innercell">负面</span></li>
+                                           <li class="c_cell"><span class="innercell">正面</span></li>
+                                           <li class="c_cell"><span class="innercell">中性</span></li>
+                                       </ul>
+                                   </div>
+                               </li>
+                               <li class="condition-wrapper clearfix">
+                                   <div class="text_title">
+                                       <span class="pic"><img src="../images/push_config.gif" alt=""></span><span class="title">媒体类型</span>
+                                   </div>
+                                   <div class="condition_con clearfix">
+                                       <ul class="condition_cells c_multi">
+                                           <li class="c_cell actived"><span class="innercell">全部</span></li>
+                                           <li class="c_cell"><span class="innercell">网媒</span></li>
+                                           <li class="c_cell"><span class="innercell">论坛</span></li>
+                                           <li class="c_cell"><span class="innercell">微博</span></li>
+                                           <li class="c_cell"><span class="innercell">微信</span></li>
+                                           <li class="c_cell"><span class="innercell">博客</span></li>
+                                           <li class="c_cell"><span class="innercell">报刊</span></li>
+                                           <li class="c_cell"><span class="innercell">视频</span></li>
+                                           <li class="c_cell"><span class="innercell">APP</span></li>
+                                           <li class="c_cell"><span class="innercell">评论</span></li>
+                                           <li class="c_cell"><span class="innercell">其他</span></li>
+                                       </ul>
+                                       <span class="checkmore_btn">
+                                <i class="txt">+ 查看全部</i>
+                            </span>
+                                   </div>
+                               </li>
+                               <li class="condition-wrapper clearfix">
+                                   <div class="text_title">
+                                       <span class="pic"><img src="../images/push_config.gif" alt=""></span><span class="title">事件标签</span>
+                                   </div>
+                                   <div class="condition_con clearfix">
+                                       <ul class="condition_cells c_multi">
+                                           <li class="c_cell actived"><span class="innercell">全部</span></li>
+                                           <li class="c_cell"><span class="innercell">市场禁入</span></li>
+                                           <li class="c_cell"><span class="innercell">责令改正</span></li>
+                                           <li class="c_cell"><span class="innercell">罚款</span></li>
+                                           <li class="c_cell"><span class="innercell">公开谴责</span></li>
+                                           <li class="c_cell"><span class="innercell">通报批评</span></li>
+                                           <li class="c_cell"><span class="innercell">限制开仓</span></li>
+                                           <li class="c_cell"><span class="innercell">限制交易</span></li>
+                                           <li class="c_cell"><span class="innercell">诫勉谈话</span></li>
+                                           <li class="c_cell"><span class="innercell">行政处罚</span></li>
+                                       </ul>
+                                   </div>
+                               </li>
+                           </ul>
+                       </div>
+                       <!-- 更多筛选条件 -->
+                       <div class="filter-more filter-condition">
+                           <div class="tit">
+                               <span class="txt">更多筛选条件</span>
+                               <div class="slide-control">
+                                   <span class="ct-state">展开</span>
+                                   <span class="arrow-btn"></span>
+                               </div>
+                           </div>
+                           <ul class="condition_list">
+                               <!--信源地域-->
+                               <li class="condition-wrapper clearfix ">
+                                   <div class="text_title">
+                                       <span class="pic"><img src="../images/push_config.gif" alt=""></span><span class="title">信源地域</span>
+                                   </div>
+                                   <div class="condition_con clearfix">
+                                       <ul class="condition_cells c_radio">
+                                           <li class="c_cell actived"><span class="innercell">全部</span></li>
+                                           <li class="c_cell">
+                                               <div class="layui-form-item">
+                                                   <div class="layui-input-inline">
+                                                       <select name="quiz1">
+                                                           <option value="">请选择省</option>
+                                                           <option value="浙江" selected="">浙江省</option>
+                                                           <option value="你的工号">江西省</option>
+                                                           <option value="你最喜欢的老师">福建省</option>
+                                                       </select>
+                                                   </div>
+                                                   <div class="layui-input-inline">
+                                                       <select name="quiz2">
+                                                           <option value="">请选择市</option>
+                                                           <option value="杭州">杭州</option>
+                                                           <option value="宁波">宁波</option>
+                                                           <option value="温州">温州</option>
+                                                           <option value="温州">台州</option>
+                                                           <option value="温州">绍兴</option>
+                                                       </select>
+                                                   </div>
+                                               </div>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </li>
+                               <!--信源分级-->
+                               <li class="condition-wrapper clearfix ">
+                                   <div class="text_title">
+                                       <span class="pic"><img src="../images/push_config.gif" alt=""></span><span class="title">信源分级</span>
+                                   </div>
+                                   <div class="condition_con clearfix">
+                                       <ul class="condition_cells c_multi">
+                                           <li class="c_cell actived"><span class="innercell">全部</span></li>
+                                           <li class="c_cell"><span class="innercell">A级</span></li>
+                                           <li class="c_cell"><span class="innercell">B级</span></li>
+                                           <li class="c_cell"><span class="innercell">C级</span></li>
+                                       </ul>
+                                   </div>
+                               </li>
+                               <!--微博类型-->
+                               <li class="condition-wrapper clearfix ">
+                                   <div class="text_title">
+                                       <span class="pic"><img src="../images/push_config.gif" alt=""></span><span class="title">微博类型</span>
+                                   </div>
+                                   <div class="condition_con clearfix">
+                                       <ul class="condition_cells c_multi">
+                                           <li class="c_cell actived"><span class="innercell">全部</span></li>
+                                           <li class="c_cell"><span class="innercell">原发</span></li>
+                                           <li class="c_cell"><span class="innercell">回复并转发</span></li>
+                                           <li class="c_cell"><span class="innercell">仅转发</span></li>
+                                       </ul>
+                                   </div>
+                               </li>
+                               <!--图片识别-->
+                               <li class="condition-wrapper clearfix ">
+                                   <div class="text_title">
+                                       <span class="pic"><img src="../images/push_config.gif" alt=""></span><span class="title">图片识别</span>
+                                   </div>
+                                   <div class="condition_con clearfix">
+                                       <ul class="condition_cells c_radio">
+                                           <li class="c_cell actived"><span class="innercell">全部</span></li>
+                                           <li class="c_cell"><span class="innercell">仅看图片识别数据</span></li>
+                                           <li class="c_cell"><span class="innercell">排除图片识别数据</span></li>
+                                       </ul>
+                                   </div>
+                               </li>
+                               <!--噪音过滤-->
+                               <li class="condition-wrapper clearfix ">
+                                   <div class="text_title">
+                                       <span class="pic"><img src="../images/push_config.gif" alt=""></span><span class="title">噪音过滤</span>
+                                   </div>
+                                   <div class="condition_con clearfix">
+                                       <ul class="condition_cells c_multi">
+                                           <li class="c_cell actived"><span class="innercell">全部</span></li>
+                                           <li class="c_cell"><span class="innercell">正常信息</span></li>
+                                           <li class="c_cell"><span class="innercell">精准信息</span></li>
+                                           <li class="c_cell"><span class="innercell">过滤信息</span></li>
+                                       </ul>
+                                   </div>
+                               </li>
+                               <!--重复信息-->
+                               <li class="condition-wrapper clearfix ">
+                                   <div class="text_title">
+                                       <span class="pic"><img src="../images/push_config.gif" alt=""></span><span class="title">重复信息</span>
+                                   </div>
+                                   <div class="condition_con clearfix">
+                                       <ul class="condition_cells c_radio">
+                                           <li class="c_cell actived"><span class="innercell">去重</span></li>
+                                           <li class="c_cell"><span class="innercell">不去重</span></li>
+                                       </ul>
+                                   </div>
+                               </li>
+                           </ul>
+                       </div>
+                   </div>
+                   <!--筛选条件 end-->
+
+                   <!-- 信息list -->
+                   <div class="yq_news_list">
+                       <div class="info_opt_wrapper clearfix">
+                           <div class="left_checkall">
+                               <input type="checkbox" name="all_check" lay-skin="primary" lay-filter="all_check" title="全选" >
+                           </div>
+                           <div class="right_opts fr">
+                               <div class="check_box" style="display: inline-block">
+                                   <input type="checkbox" name="" lay-skin="primary" lay-filter="hideabs" title="隐藏摘要" >
+                               </div>
+                               <div class="layui-input-inline">
+                                   <select name="sort" lay-filter="sort">
+                                       <option value=""></option>
+                                       <option value="0" selected="">按时间</option>
+                                       <option value="1">按热度</option>
+                                   </select>
+                               </div>
+                               <div class="layui-input-inline">
+                                   <select name="sort" lay-filter="sort">
+                                       <option value=""></option>
+                                       <option value="0" selected="">每页20条</option>
+                                       <option value="1">每页50条</option>
+                                       <option value="1">每页100条</option>
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="message_list">
+                           <ul class="clearfix">
+                               <li class="message other">
+                                   <div class="all_checkbox">
+                                       <input type="checkbox" name="message_check" lay-filter="messageck" lay-skin="primary" title="" >
+                                       <div class="ribbons z"></div>
+                                   </div>
+                                   <div class="photo">
+                                       <img src="../images/message_img.jpg" alt="">
+                                   </div>
+                                   <div class="content_right new_data">
+                                       <div class="top_message">
+                                           <div class="title_text">
+                                               <div class="title">
+                                                   <a href="info_detail.html" target="_blank">
+                                                       1. <span>拟提拔多名干部，多名与林州有关！</span>
+                                                   </a>
+                                               </div>
+                                           </div>
+                                           <div class="pic article_title"><span class="identical"><em>3</em>条</span></div>
+                                       </div>
+                                       <!--摘要-->
+                                       <div class="list_message ">
+                                           现将有关情况公示如下，请予监督：李承毅，男，1964年7月生，林州市人，大学文化程度，现任林州市住建局党组书记、局长，2007年7月任现级，李茂生，男，1969年7月生，林州市人，大专文化程度，现任林州市财政局党组书记、局长，2007年4月任现级，栗强云，男，1973年6月生，林州市人，党校大学文化程度，现任林州市姚村镇党委书记，2005年3月任现级，雷涛，男，1978年10月生，安阳县人，党校大
+                                       </div>
+                                       <!--时间作者来源关键词-->
+                                       <div class="url_wrap">
+                                           <div class="address">
+                                               <em>2019-05-10 14:01</em>
+                                               <!--头像-->
+                                               <em class="weibo_photo"><img src="../images/noIdimg.png"></em>
+                                               <!--名称-->
+                                               <em style="cursor:pointer;">林州趣闻</em>
+                                               <!--来源-->
+                                               <em>
+                                                   <a href="" class="viewMore" target="_blank" style="width: auto;">微信</a>
+                                               </em>
+                                               <!--关键词-->
+                                               <em style="color:#ff0000;" title="经济开发区,环保局局长">经济开发区,环保局局长</em>
+                                           </div>
+                                           <!--一堆图标-->
+                                           <ul class="pic_list pic_list_new1_newico">
+                                                <li class="collect_ico"></li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                               </li>
+                               <li class="message">
+                                   <div class="all_checkbox">
+                                       <input type="checkbox" name="message_check" lay-filter="messageck" lay-skin="primary" title="" >
+                                       <div class="ribbons"></div>
+                                   </div>
+                                   <!--<div class="photo"></div>-->
+                                   <div class="content_right new_data">
+                                       <div class="top_message">
+                                           <div class="title_text">
+                                               <div class="title">
+                                                   <a href="info_detail2.html" target="_blank">
+                                                       1. <span>拟提拔多名干部，多名与林州有关！</span>
+                                                   </a>
+                                               </div>
+                                           </div>
+                                           <div class="pic article_title"><span class="identical"><em>3</em>条</span></div>
+                                       </div>
+                                       <!--摘要-->
+                                       <div class="list_message ">
+                                           现将有关情况公示如下，请予监督：李承毅，男，1964年7月生，林州市人，大学文化程度，现任林州市住建局党组书记、局长，2007年7月任现级，李茂生，男，1969年7月生，林州市人，大专文化程度，现任林州市财政局党组书记、局长，2007年4月任现级，栗强云，男，1973年6月生，林州市人，党校大学文化程度，现任林州市姚村镇党委书记，2005年3月任现级，雷涛，男，1978年10月生，安阳县人，党校大
+                                       </div>
+                                       <!--时间作者来源关键词-->
+                                       <div class="url_wrap">
+                                           <div class="address">
+                                               <em>2019-05-10 14:01</em>
+                                               <!--头像-->
+                                               <em class="weibo_photo"><img src="../images/noIdimg.png"></em>
+                                               <!--名称-->
+                                               <em style="cursor:pointer;">林州趣闻</em>
+                                               <!--来源-->
+                                               <em>
+                                                   <a href="" class="viewMore" target="_blank" style="width: auto;">微信</a>
+                                               </em>
+                                               <!--关键词-->
+                                               <em style="color:#ff0000;" title="经济开发区,环保局局长">经济开发区,环保局局长</em>
+                                           </div>
+                                           <!--一堆图标-->
+                                           <ul class="pic_list pic_list_new1_newico">
+                                               <li class="collect_ico actived"></li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                               </li>
+                               <li class="message">
+                                   <div class="all_checkbox">
+                                       <input type="checkbox" name="message_check" lay-filter="messageck" lay-skin="primary" title="" >
+                                       <div class="ribbons f"></div>
+                                   </div>
+                                   <!--<div class="photo"></div>-->
+                                   <div class="content_right new_data">
+                                       <div class="top_message">
+                                           <div class="title_text">
+                                               <div class="title">
+                                                   <a href="info_detail.html" target="_blank">
+                                                       1. <span>拟提拔多名干部，多名与林州有关！</span>
+                                                   </a>
+                                               </div>
+                                           </div>
+                                           <div class="pic article_title"><span class="identical"><em>3</em>条</span></div>
+                                       </div>
+                                       <!--摘要-->
+                                       <div class="list_message ">
+                                           现将有关情况公示如下，请予监督：李承毅，男，1964年7月生，林州市人，大学文化程度，现任林州市住建局党组书记、局长，2007年7月任现级，李茂生，男，1969年7月生，林州市人，大专文化程度，现任林州市财政局党组书记、局长，2007年4月任现级，栗强云，男，1973年6月生，林州市人，党校大学文化程度，现任林州市姚村镇党委书记，2005年3月任现级，雷涛，男，1978年10月生，安阳县人，党校大
+                                       </div>
+                                       <!--时间作者来源关键词-->
+                                       <div class="url_wrap">
+                                           <div class="address">
+                                               <em>2019-05-10 14:01</em>
+                                               <!--头像-->
+                                               <em class="weibo_photo"><img src="../images/noIdimg.png"></em>
+                                               <!--名称-->
+                                               <em style="cursor:pointer;">林州趣闻</em>
+                                               <!--来源-->
+                                               <em>
+                                                   <a href="" class="viewMore" target="_blank" style="width: auto;">微信</a>
+                                               </em>
+                                               <!--关键词-->
+                                               <em style="color:#ff0000;" title="经济开发区,环保局局长">经济开发区,环保局局长</em>
+                                           </div>
+                                           <!--一堆图标-->
+                                           <ul class="pic_list pic_list_new1_newico">
+                                               <li class="collect_ico"></li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                               </li>
+                           </ul>
+                       </div>
+                   </div>
+                   <!-- 信息list end -->
+               </form>
+               <form class="layui-form tab-content" action="">
+                   <!--筛选条件-->
+                   <div class="filter-wrapper">
+                       <!--基本筛选条件-->
+                       <div class="filter-basic filter-condition actived">
+                           <div class="tit">
+                               <span class="txt">基本筛选条件</span>
+                               <div class="slide-control actived">
+                                   <span class="ct-state">收起</span>
+                                   <span class="arrow-btn"></span>
+                               </div>
+                           </div>
+                           <ul class="condition_list">
+                               <li class="condition-wrapper clearfix">
+                                   <div class="text_title">
+                                       <span class="pic"><img src="../images/push_config.gif" alt=""></span><span class="title">时间</span>
+                                   </div>
+                                   <div class="condition_con clearfix">
+                                       <ul class="condition_cells time_condition_cells">
+                                           <li class="c_cell actived"><span class="innercell">全部</span></li>
+                                           <li class="c_cell"><span class="innercell">当天</span></li>
+                                           <li class="c_cell"><span class="innercell">24小时</span></li>
+                                           <li class="c_cell"><span class="innercell">近7天</span></li>
+                                           <li class="c_cell custom_time"><span class="innercell">自定义</span></li>
+                                           <li class="c_cell_more customtime_wrapper">
+                                               <div class="layui-form-item">
+                                                   <div class="layui-inline">
+                                                       <div class="layui-input-inline">
+                                                           <input type="text" class="layui-input" id="test7" placeholder=" - ">
+                                                       </div>
+                                                   </div>
+                                               </div>
+                                           </li>
+                                       </ul>
+                                   </div>
+                               </li>
+                               <li class="condition-wrapper clearfix">
+                                   <div class="text_title">
+                                       <span class="pic"><img src="../images/push_config.gif" alt=""></span><span class="title">倾向性</span>
+                                   </div>
+                                   <div class="condition_con clearfix">
+                                       <ul class="condition_cells">
+                                           <li class="c_cell actived"><span class="innercell">全部</span></li>
+                                           <li class="c_cell"><span class="innercell">负面</span></li>
+                                           <li class="c_cell"><span class="innercell">正面</span></li>
+                                           <li class="c_cell"><span class="innercell">中性</span></li>
+                                       </ul>
+                                   </div>
+                               </li>
+                               <li class="condition-wrapper clearfix">
+                                   <div class="text_title">
+                                       <span class="pic"><img src="../images/push_config.gif" alt=""></span><span class="title">媒体类型</span>
+                                   </div>
+                                   <div class="condition_con clearfix">
+                                       <ul class="condition_cells">
+                                           <li class="c_cell actived"><span class="innercell">全部</span></li>
+                                           <li class="c_cell"><span class="innercell">网媒</span></li>
+                                           <li class="c_cell"><span class="innercell">论坛</span></li>
+                                           <li class="c_cell"><span class="innercell">微博</span></li>
+                                           <li class="c_cell"><span class="innercell">微信</span></li>
+                                           <li class="c_cell"><span class="innercell">博客</span></li>
+                                           <li class="c_cell"><span class="innercell">报刊</span></li>
+                                           <li class="c_cell"><span class="innercell">视频</span></li>
+                                           <li class="c_cell"><span class="innercell">APP</span></li>
+                                           <li class="c_cell"><span class="innercell">评论</span></li>
+                                           <li class="c_cell"><span class="innercell">其他</span></li>
+                                       </ul>
+                                       <span class="checkmore_btn">
+                                <i class="txt">+ 查看全部</i>
+                            </span>
+                                   </div>
+                               </li>
+                               <li class="condition-wrapper clearfix">
+                                   <div class="text_title">
+                                       <span class="pic"><img src="../images/push_config.gif" alt=""></span><span class="title">事件标签</span>
+                                   </div>
+                                   <div class="condition_con clearfix">
+                                       <ul class="condition_cells">
+                                           <li class="c_cell actived"><span class="innercell">全部</span></li>
+                                           <li class="c_cell"><span class="innercell">市场禁入</span></li>
+                                           <li class="c_cell"><span class="innercell">责令改正</span></li>
+                                           <li class="c_cell"><span class="innercell">罚款</span></li>
+                                           <li class="c_cell"><span class="innercell">公开谴责</span></li>
+                                           <li class="c_cell"><span class="innercell">通报批评</span></li>
+                                           <li class="c_cell"><span class="innercell">限制开仓</span></li>
+                                           <li class="c_cell"><span class="innercell">限制交易</span></li>
+                                           <li class="c_cell"><span class="innercell">诫勉谈话</span></li>
+                                           <li class="c_cell"><span class="innercell">行政处罚</span></li>
+                                       </ul>
+                                   </div>
+                               </li>
+                           </ul>
+                       </div>
+                   </div>
+                   <!--筛选条件 end-->
+
+                   <!-- 信息list -->
+                   <div class="yq_news_list">
+                       <div class="info_opt_wrapper clearfix">
+                           <div class="left_checkall">
+                               <input type="checkbox" name="all_check" lay-skin="primary" lay-filter="all_check" title="全选" >
+                           </div>
+                           <div class="right_opts fr">
+                               <div class="check_box" style="display: inline-block">
+                                   <input type="checkbox" name="" lay-skin="primary" lay-filter="hideabs" title="隐藏摘要" >
+                               </div>
+                               <div class="layui-input-inline">
+                                   <select name="sort" lay-filter="sort">
+                                       <option value=""></option>
+                                       <option value="0" selected="">按时间</option>
+                                       <option value="1">按热度</option>
+                                   </select>
+                               </div>
+                               <div class="layui-input-inline">
+                                   <select name="sort" lay-filter="sort">
+                                       <option value=""></option>
+                                       <option value="0" selected="">每页20条</option>
+                                       <option value="1">每页50条</option>
+                                       <option value="1">每页100条</option>
+                                   </select>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="message_list">
+                           <ul class="clearfix">
+                               <li class="message other">
+                                   <div class="all_checkbox">
+                                       <input type="checkbox" name="message_check" lay-filter="messageck" lay-skin="primary" title="" >
+                                       <div class="ribbons z"></div>
+                                   </div>
+                                   <div class="photo">
+                                       <img src="../images/message_img.jpg" alt="">
+                                   </div>
+                                   <div class="content_right new_data">
+                                       <div class="top_message">
+                                           <div class="title_text">
+                                               <div class="title">
+                                                   <a href="" target="_blank">
+                                                       1. <span>拟提拔多名干部，多名与林州有关！</span>
+                                                   </a>
+                                               </div>
+                                           </div>
+                                           <div class="pic article_title">
+                                               <span class="ms_type">招投标</span>
+                                           </div>
+                                       </div>
+                                       <!--摘要-->
+                                       <div class="list_message ">
+                                           现将有关情况公示如下，请予监督：李承毅，男，1964年7月生，林州市人，大学文化程度，现任林州市住建局党组书记、局长，2007年7月任现级，李茂生，男，1969年7月生，林州市人，大专文化程度，现任林州市财政局党组书记、局长，2007年4月任现级，栗强云，男，1973年6月生，林州市人，党校大学文化程度，现任林州市姚村镇党委书记，2005年3月任现级，雷涛，男，1978年10月生，安阳县人，党校大
+                                       </div>
+                                       <!--时间作者来源关键词-->
+                                       <div class="url_wrap">
+                                           <div class="address">
+                                               <em>2019-05-10 14:01</em>
+                                               <!--头像-->
+                                               <em class="weibo_photo"><img src="../images/noIdimg.png"></em>
+                                               <!--名称-->
+                                               <em style="cursor:pointer;">林州趣闻</em>
+                                               <!--来源-->
+                                               <em>
+                                                   <a href="" class="viewMore" target="_blank" style="width: auto;">微信</a>
+                                               </em>
+                                               <!--关键词-->
+                                               <em style="color:#ff0000;" title="经济开发区,环保局局长">经济开发区,环保局局长</em>
+                                           </div>
+                                           <!--一堆图标-->
+                                           <ul class="pic_list pic_list_new1_newico">
+                                               <li class="collect_ico"></li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                               </li>
+                               <li class="message">
+                                   <div class="all_checkbox">
+                                       <input type="checkbox" name="message_check" lay-filter="messageck" lay-skin="primary" title="" >
+                                       <div class="ribbons"></div>
+                                   </div>
+                                   <!--<div class="photo"></div>-->
+                                   <div class="content_right new_data">
+                                       <div class="top_message">
+                                           <div class="title_text">
+                                               <div class="title">
+                                                   <a href="" target="_blank">
+                                                       1. <span>拟提拔多名干部，多名与林州有关！</span>
+                                                   </a>
+                                               </div>
+                                           </div>
+                                           <div class="pic article_title">
+                                               <span class="ms_type">工商变更</span>
+                                           </div>
+                                       </div>
+                                       <!--摘要-->
+                                       <div class="list_message ">
+                                           现将有关情况公示如下，请予监督：李承毅，男，1964年7月生，林州市人，大学文化程度，现任林州市住建局党组书记、局长，2007年7月任现级，李茂生，男，1969年7月生，林州市人，大专文化程度，现任林州市财政局党组书记、局长，2007年4月任现级，栗强云，男，1973年6月生，林州市人，党校大学文化程度，现任林州市姚村镇党委书记，2005年3月任现级，雷涛，男，1978年10月生，安阳县人，党校大
+                                       </div>
+                                       <!--时间作者来源关键词-->
+                                       <div class="url_wrap">
+                                           <div class="address">
+                                               <em>2019-05-10 14:01</em>
+                                               <!--头像-->
+                                               <em class="weibo_photo"><img src="../images/noIdimg.png"></em>
+                                               <!--名称-->
+                                               <em style="cursor:pointer;">林州趣闻</em>
+                                               <!--来源-->
+                                               <em>
+                                                   <a href="" class="viewMore" target="_blank" style="width: auto;">微信</a>
+                                               </em>
+                                               <!--关键词-->
+                                               <em style="color:#ff0000;" title="经济开发区,环保局局长">经济开发区,环保局局长</em>
+                                           </div>
+                                           <!--一堆图标-->
+                                           <ul class="pic_list pic_list_new1_newico">
+                                               <li class="collect_ico actived"></li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                               </li>
+                               <li class="message">
+                                   <div class="all_checkbox">
+                                       <input type="checkbox" name="message_check" lay-filter="messageck" lay-skin="primary" title="" >
+                                       <div class="ribbons f"></div>
+                                   </div>
+                                   <!--<div class="photo"></div>-->
+                                   <div class="content_right new_data">
+                                       <div class="top_message">
+                                           <div class="title_text">
+                                               <div class="title">
+                                                   <a href="" target="_blank">
+                                                       1. <span>拟提拔多名干部，多名与林州有关！</span>
+                                                   </a>
+                                               </div>
+                                           </div>
+                                           <div class="pic article_title"> <span class="ms_type">法院公告</span></div>
+                                       </div>
+                                       <!--摘要-->
+                                       <div class="list_message ">
+                                           现将有关情况公示如下，请予监督：李承毅，男，1964年7月生，林州市人，大学文化程度，现任林州市住建局党组书记、局长，2007年7月任现级，李茂生，男，1969年7月生，林州市人，大专文化程度，现任林州市财政局党组书记、局长，2007年4月任现级，栗强云，男，1973年6月生，林州市人，党校大学文化程度，现任林州市姚村镇党委书记，2005年3月任现级，雷涛，男，1978年10月生，安阳县人，党校大
+                                       </div>
+                                       <!--时间作者来源关键词-->
+                                       <div class="url_wrap">
+                                           <div class="address">
+                                               <em>2019-05-10 14:01</em>
+                                               <!--头像-->
+                                               <em class="weibo_photo"><img src="../images/noIdimg.png"></em>
+                                               <!--名称-->
+                                               <em style="cursor:pointer;">林州趣闻</em>
+                                               <!--来源-->
+                                               <em>
+                                                   <a href="" class="viewMore" target="_blank" style="width: auto;">微信</a>
+                                               </em>
+                                               <!--关键词-->
+                                               <em style="color:#ff0000;" title="经济开发区,环保局局长">经济开发区,环保局局长</em>
+                                           </div>
+                                           <!--一堆图标-->
+                                           <ul class="pic_list pic_list_new1_newico">
+                                               <li class="collect_ico"></li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                               </li>
+                           </ul>
+                       </div>
+                   </div>
+                   <!-- 信息list end -->
+               </form>
+           </div>
+
+        </div>
+    </div>
+</div>
+<!--返回顶部按钮-->
+<div class="yqms_sidebar_box" onclick="gototop()"><div class="to_top_box border_box"><div class="to_top"></div></div></div>
+
+<!--专题编辑内容-->
+<div class="special_topic" id="stpop"  style="display: none">
+    <form class="layui-form" action="">
+        <ul>
+            <li class="st_wrapper">
+                <div class="tit">专题名称</div>
+                <div class="st_content">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">专题名称：</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">专题是否启用：</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" checked="" name="open" lay-skin="switch" lay-filter="startSt" lay-text="启用|关闭">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="st_wrapper">
+                <div class="tit">数据来源</div>
+                <div class="st_content">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">数据来源：</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="datasource" lay-filter="ds_chekall" value="全部" title="全部">
+                            <input type="radio" name="datasource" lay-filter="ds_inverse" value="反选" title="反选">
+                        </div>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="ds" lay-skin="primary" title="数据来源1">
+                            <input type="checkbox" name="ds" lay-skin="primary" title="数据来源2">
+                            <input type="checkbox" name="ds" lay-skin="primary" title="数据来源3">
+                            <input type="checkbox" name="ds" lay-skin="primary" title="数据来源4">
+                            <input type="checkbox" name="ds" lay-skin="primary" title="数据来源5">
+                            <input type="checkbox" name="ds" lay-skin="primary" title="数据来源6">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="st_wrapper">
+                <div class="tit">关键词设置 <i style="color: #ff0000;">（多个关键词之间请用空格隔开）</i></div>
+                <div class="st_content">
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">
+                            <i>机构词</i>
+                            <span class="hover_txt" title="请输入想要监控的企业机构完整名称，比如：华为技术有限公司（*机构名称必须要输入全称）"><i class="qs-ico">?</i></span>
+                        </label>
+                        <div class="layui-input-block">
+                            <textarea placeholder="" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">
+                            <i>主体词</i>
+                            <span class="hover_txt" title="请输入机构相关的主体词，比如：高管 监事 经理 雷军"><i class="qs-ico">?</i></span>
+                        </label>
+                        <div class="layui-input-block">
+                            <textarea placeholder="" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">
+                            <i>事件词</i>
+                            <span class="hover_txt" title="请输入主体词相关的事件词，比如：出轨 涉黄 涉暴 违法 犯罪 违规 包养 杀人"><i class="qs-ico">?</i></span>
+                        </label>
+                        <div class="layui-input-block">
+                            <textarea placeholder="" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label class="layui-form-label">
+                            <i>歧义词排除</i>
+                            <span class="hover_txt" title="请输入歧义词，排除不关注的数据信息，比如：券商公告 券商年报"><i class="qs-ico">?</i></span>
+                        </label>
+                        <div class="layui-input-block">
+                            <textarea placeholder="" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="st_wrapper">
+                <div class="tit">推送设置</div>
+                <div class="st_content">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">推送设置：</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="pushset" value="推送" title="推送" checked="">
+                            <input type="radio" name="pushset" value="不推送" title="不推送">
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="st_wrapper">
+                <div class="tit">移动端新数据提醒设置</div>
+                <div class="st_content">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">时间间隔：</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="timeinterval" value="不推送" title="不推送" checked="">
+                            <input type="radio" name="timeinterval" value="5分钟" title="5分钟">
+                            <input type="radio" name="timeinterval" value="10分钟" title="10分钟">
+                            <input type="radio" name="timeinterval" value="30分钟" title="30分钟">
+                            <input type="radio" name="timeinterval" value="60分钟" title="60分钟">
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+
+    </form>
+</div>
+<!--专题编辑内容 end-->
+<script>
+    $(document).bind("click",function(e){
+        var target  = $(e.target);    //e.target获取触发事件的元素
+        if(target.closest(".togglebtn").length == 0){
+            $(".togglebox").hide();
+        };
+        e.stopPropagation();
+    });
+    $("body").on("click",".range-cell",function () {
+        var rsobj = $(this).closest(".togglebtn").find(".rs-txt");
+        var cuTxt = $(this).text();
+        rsobj.text(cuTxt);
+    })
+    /* 筛选条件收起展开 */
+    $("body").on("click", ".slide-control", function () {
+        var parentbox = $(this).closest(".filter-condition");
+        var controltxt = $(this).find(".ct-state");
+        if($(this).hasClass("actived")){
+            $(this).removeClass("actived");
+            parentbox.removeClass("actived");
+            controltxt.text("展开")
+        }else {
+            $(this).addClass("actived");
+            parentbox.addClass("actived");
+            controltxt.text("收起")
+        }
+    })
+    /*筛选标签选择（单选模式）*/
+    $("body").on("click", ".c_radio .c_cell", function () {
+        var time_pa = $(this).closest(".condition_cells").hasClass("time_condition_cells");
+        var time_wrapper = $(this).closest(".condition_cells").find(".customtime_wrapper");
+        if(time_pa){
+            time_wrapper.hide()
+        }
+        var sib = $(this).closest(".condition_cells").find(".c_cell");
+        sib.removeClass("actived");
+        $(this).addClass("actived");
+    })
+
+    /*筛选标签选择 （多选模式）*/
+    $("body").on("click", ".c_multi .c_cell", function () {
+        if($(this).hasClass("actived")){
+            $(this).removeClass("actived")
+        }else{
+            $(this).addClass("actived")
+        }
+    })
+    /*点击时间自定义出现日期选择框*/
+    $("body").on("click", ".custom_time", function () {
+        if($(this).hasClass("actived")){
+            $(this).closest(".time_condition_cells").find(".customtime_wrapper").show();
+        }else{
+            $(this).closest(".time_condition_cells").find(".customtime_wrapper").hide();
+        }
+    })
+
+    /*tab 切换*/
+    $("body").on("click", ".item-tab ", function () {
+        $(this).addClass("actived").siblings(".item-tab").removeClass("actived");
+        $(".tab-content").removeClass("actived");
+        $(".tab-content").eq($(this).index()).addClass("actived");
+        var tabtxt = $(this).text();
+        if(tabtxt == "企业舆情"){
+            $(".hidecell").show()
+        }else{
+            $(".hidecell").hide()
+        }
+    })
+
+    /*关闭推送预警*/
+    $("body").on("click" ,".toalarm_top_r" ,function () {
+        $(this).closest(".toalarm").hide(350)
+    })
+    /* 弹出专题编辑弹框 */
+    function show_stpop() {
+        layui.use('layer',function () {
+            var layer = layui.layer;
+            layer.open({
+                type:1,
+                content:$("#stpop"),
+                title:'',
+                area:['620','96%'],
+                btn:['保存','取消'],
+                btnAlign: 'c'
+
+            })
+        })
+
+    }
+</script>
+<script>
+    layui.use(['form', 'layedit', 'laydate', 'layer'], function() {
+        var laydate = layui.laydate
+            ,form = layui.form
+            ,layer =layui.layer;
+        //日期范围
+        laydate.render({
+            elem: '#test6'
+            ,type: 'datetime'
+            ,range: true
+        });
+        laydate.render({
+            elem: '#test7'
+            ,type: 'datetime'
+            ,range: true
+        });
+        /*隐藏摘要*/
+        form.on('checkbox(hideabs)', function(data){
+            var listms = $(this).closest(".yq_news_list").find(".list_message");
+           if(data.elem.checked){
+               listms.slideUp()
+           }else{
+               listms.slideDown()
+           }
+        });
+        /*全选全不选*/
+        var check = null;
+        var arr = [];
+        form.on('checkbox(all_check)', function(data){
+            var child = $(this).closest(".yq_news_list").find(':checkbox[name="message_check"]');
+            child.each(function(index, item){
+                item.checked = data.elem.checked;
+            });
+            form.render('checkbox');
+        });
+        form.on('checkbox(messageck)', function (data) {
+            var child = $(this).closest(".yq_news_list").find(':checkbox[name="message_check"]');
+            arr = [];
+            child.each(function(index, item){
+                arr.push(item.checked+'')
+            });
+            var b = arr.indexOf("false");
+            if(data.elem.checked == false){
+                check = false
+                $(this).closest(".yq_news_list").find(':checkbox[name="all_check"]').prop("checked", false);
+                form.render('checkbox');
+            }else if(b == -1){
+                $(this).closest(".yq_news_list").find(':checkbox[name="all_check"]').prop("checked", true);
+                form.render('checkbox');
+            }
+        })
+
+        /*专题编辑--数据来源全选与反选*/
+            /*全选*/
+        form.on('radio(ds_chekall)', function(data){
+            $(this).closest(".layui-form-item").find(':checkbox[name="ds"]').prop("checked", true)
+            form.render('checkbox');
+        });
+            /*反选*/
+        form.on('radio(ds_inverse)', function(data){
+            var child = $(this).closest(".layui-form-item").find(':checkbox[name="ds"]');
+            child.each(function (index, item) {
+                item.checked == true?item.checked = false:item.checked = true;
+            });
+            form.render('checkbox');
+        });
+        
+
+    })
+</script>
+</body>
+</html>

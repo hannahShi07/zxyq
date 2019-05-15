@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>舆情浏览</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="../css/public.css"  media="all">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../layui/layui.js" charset="utf-8"></script>
+    <script src="../js/public.js"></script>
+</head>
+<body style="background-color: #f2f2f2;">
+<div class="mainbox wary">
+<div class="mainbox wary">
+    <div class="po-header">
+        <div class="po-nav">
+            <div class="po-logo">
+                <a href="../index.html"><img src="../images/zaxlogowhite.png" alt=""></a>
+            </div>
+            <ul class="po-navlist">
+                <li class="nav-cell actived"><a href="index.html" class="">舆情浏览</a></li>
+                <li class="nav-cell"><a href="index-push.html" class="">舆情推送</a></li>
+            </ul>
+            <div class="userinfo togglebtn" onclick="toggleul(this)">
+                <span class="user-name">AHSR</span>
+                <span class="arrow-btn iconfont iconjiantouxia"></span>
+                <ul class="clearfix user-opt togglebox" style="display: none;">
+                    <li><a href="../personal/personal.html" class=""> <i class="iconfont iconmenu_wd"></i><i>个人中心</i></a></li>
+                    <li><a href="javascript:;"><i class="iconfont icontuichu"></i><i>退出登录</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main-wrapper">
+        <div class="detail_wrap">
+            <div class="detail">
+                <div class="content">
+                    <h1 id="selectText">商品房预售合同纠纷</h1>
+                    <div class="information">
+                        <i style="margin-left:0;">2019-05-10 09:46</i>
+                        <i title="中国裁判文书网">来源：中国裁判文书网</i>
+                        <!--<i title="中国裁判文书网">作者：中国裁判文书网 &nbsp;</i>-->
+                        <!--开庭公告/裁判文书/法院公告/失信信息/被执行人/关联被执行人/关联失信人/行政处罚/严重违法/股权出质-->
+                        <i>信息类型：<span><span style="color:#ffa741">开庭公告</span></span></i>
+                    </div>
+                    <div class="url">
+                        原文链接:&nbsp;<a href="http://www.ahyouth.com/news/20190510/1379921.shtml" target="target">http://www.ahyouth.com/news/20190510/1379921.shtml</a>
+                        &nbsp;<a href="javascript:void(0)" url="" class="my_clip_button" style="color: #1B9FDE;">复制链接</a>
+                    </div>
+                    <div class="pic_wrap">
+                        <ul>
+                            <li class="one"><a href="javascript:void(0)" title="上报信息" class="kongjian" ><i></i>上报</a></li>
+                            <li class="eight">
+                                <a>
+                                    <i></i>分享</a>
+                                <ul the-id="sharecontent" style="display: none;">
+                                    <li value="1">
+                                        <a href="javascript:void(0)" class="kongjian">腾讯QQ</a>
+                                    </li>
+                                    <li value="2">
+                                        <a href="javascript:void(0)" class="kongjian">微信</a>
+                                    </li>
+                                    <div class="wx_k" style="display: none;">
+                                        <div id="sharexw" style="display: none;" title="">
+                                            <canvas width="180" height="180" style="display: none;"></canvas>
+                                            <img style="display: block;" src="">
+                                        </div>
+                                        <p>用微信扫描二维码</p>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="two">
+                                <a href="javascript:void(0)" class="attention_btn actived" title="加关注"><i></i><b class="txt">已关注</b></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content_wrap">
+                       <table class="text_table">
+                           <tbody>
+                           <tr>
+                               <td><span class="innertxt">开庭时间</span></td>
+                               <td><span class="innertxt">2017-06-01</span></td>
+                           </tr>
+                           <tr>
+                               <td><span class="innertxt">审判长/主审人</span></td>
+                               <td><span class="innertxt">毕在强</span></td>
+                           </tr>
+                           <tr>
+                               <td><span class="innertxt">原告/上诉人</span></td>
+                               <td><span class="innertxt">欧阳俊杰,欧邦友</span></td>
+                           </tr>
+                           <tr>
+                               <td><span class="innertxt">被告/被上诉人</span></td>
+                               <td><span class="innertxt">重庆华川置业有限公司</span></td>
+                           </tr>
+                           <tr>
+                               <td><span class="innertxt">案由</span></td>
+                               <td><span class="innertxt">商品房预售合同纠纷</span></td>
+                           </tr>
+                           <tr>
+                               <td><span class="innertxt">法院</span></td>
+                               <td><span class="innertxt">重庆市大足区人民法院</span></td>
+                           </tr>
+                           <tr>
+                               <td><span class="innertxt">法庭</span></td>
+                               <td><span class="innertxt">第三审判庭</span></td>
+                           </tr>
+                           <tr>
+                               <td><span class="innertxt">案件号</span></td>
+                               <td><span class="innertxt">（2017）渝 0111 民初 3352 号</span></td>
+                           </tr>
+                           <tr>
+                               <td><span class="innertxt">承办部门</span></td>
+                               <td><span class="innertxt">法律部</span></td>
+                           </tr>
+                           <tr>
+                               <td><span class="innertxt">公告内容</span></td>
+                               <td><span class="innertxt">开庭公告(2017)渝0111民初3352号本院定于二〇一七年六月一日09:30到 11:00在第三审判庭开庭审理(2017)渝 0111 民初3352 号原告欧阳俊杰,欧邦友诉被告重庆华川置业有限公司商品房预售合同纠纷一案。大足区人民法院 承办人：毕在强_a1_关闭</span></td>
+                           </tr>
+                           </tbody>
+                       </table>
+                        <table class="text_table">
+                            <tbody>
+                            <tr>
+                                <td><span class="innertxt">标题</span></td>
+                                <td><span class="innertxt">中国联合通信有限公司郏县分能够给弄死、李桂枝劳动争议二审民事判决书</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">案号</span></td>
+                                <td><span class="innertxt">（2016）豫11民终1026号</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">案件类型</span></td>
+                                <td><span class="innertxt">（2016）豫11民终1026号</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">案件类型</span></td>
+                                <td><span class="innertxt">民事 判决</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">案件省份</span></td>
+                                <td><span class="innertxt">河南省</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">判决法院</span></td>
+                                <td><span class="innertxt">河南省漯河市中级人民法院</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">判决时间</span></td>
+                                <td><span class="innertxt">2017-06-01</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">简述</span></td>
+                                <td><span class="innertxt">上诉人中国农业银行股份有限公司漯河郾城支行（以下简称农行郾城支行）因与被上诉人李桂枝劳动争议纠纷一案，不服郾城区人民法院（2016）豫1103民初847号民事判决，向本院提起上诉。本院依法组成合议庭，于2016年6月12日公开开庭审理了本案。上诉人农行郾城支行的委托代理人井来轩，被上诉人李桂枝的委托代理人赵绍虎到庭参加诉讼。本案现已审理终结。</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">内容</span></td>
+                                <td>
+                                    <span class="innertxt">
+                                        本院认为，《中华人民共和国劳动合同法》第七条规定：“用人单位自用工之日起即与劳动者建立劳动关系”。劳动和社会保障部《关于劳动合同制职工工龄计算问题的复函》（劳社厅函（2002）323号）规定：“对按照有关规定招用的临时工，转为企业劳动合同制工人的，其最后一次在本企业从事临时工的工作时间与被招收为劳动合同制工人后的工作时间可合并计算为连续工龄”。本案被上诉人李桂枝，自1980年10月参加工作以来，工作时间从未间断过，至今仍由单位发放工资且未办理退休手续，以上事实李桂枝提供的证人证言、劳动合同书、干部履历表以及河南省人力资源和社会保障厅网站在职职工基本信息查询网页予以证明，原审判决确认李桂枝的参加工作时间自1980年10月起连续工作至今认定事实清楚，证据确实充分，本院依法予以维持。李桂枝的个人档案中虽缺少个别招工手续，但并不影响被上诉人李桂枝一直在上诉人农行郾城支行处工作的事实。故其参加工作的时间应自1980年10月至今。综上，上诉人农行郾城支行的上诉理由不能成立，本院对其上诉请求依法不予支持。原审判决认定事实清楚，适用法律正确，本院依法予以维持。依照《中华人民共和国民事诉讼法》第一百七十条第一款第（一）项之规定，判决如下：<br>裁判结果<br>驳回上诉，维持原判。
+                                    </span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="text_table">
+                            <tbody>
+                            <tr>
+                                <td><span class="innertxt">当事人</span></td>
+                                <td><span class="innertxt">台州市椒江富腾眼镜有限公司</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">公告人</span></td>
+                                <td><span class="innertxt">浙江省杭州市中级人民法院</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">公告类型</span></td>
+                                <td><span class="innertxt">更正</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">公告时间</span></td>
+                                <td><span class="innertxt">2019-05-13</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">公告内容</span></td>
+                                <td><span class="innertxt">台州市椒江富腾眼镜有限公司:本报于2019年3月3日G54版刊登的厦门雅瑞光学有限公司诉台州市椒江富腾眼镜有限公司、杭州阿里巴巴广告有限公司侵害外观设计专利权纠纷一案，原开庭时间有误，现定于2019年8月8日14时30分在本院第十三法庭开庭审理，特此公告。</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="text_table">
+                            <tbody>
+                            <tr>
+                                <td><span class="innertxt">失信被执行人</span></td>
+                                <td><span class="innertxt">天津信裕房地产发展有限公司</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">性别</span></td>
+                                <td><span class="innertxt">-</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">年龄</span></td>
+                                <td><span class="innertxt">-</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">身份证号码/组织机构代码</span></td>
+                                <td><span class="innertxt">60056316-5</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">标识自然人或企业</span></td>
+                                <td><span class="innertxt">徐永清</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">执行法院</span></td>
+                                <td><span class="innertxt">天津市河西区人民法院</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">执行依据文号</span></td>
+                                <td><span class="innertxt">【2017】津仲裁字第0330号</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">案号</span></td>
+                                <td><span class="innertxt">(2018)津0103执1265号  </span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">省份</span></td>
+                                <td><span class="innertxt">天津</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">作出执行依据单位</span></td>
+                                <td><span class="innertxt">天津市仲裁委员会</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">立案时间</span></td>
+                                <td><span class="innertxt">2018-03-02</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">发布时间</span></td>
+                                <td><span class="innertxt"> 2018-07-02</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">被执行人履行情况</span></td>
+                                <td><span class="innertxt">全部未履行</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">失信被执行人行为具体情形</span></td>
+                                <td><span class="innertxt">有履行能力而拒不履行生效法律文书确定义务</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">生效法律文书确定的义务</span></td>
+                                <td><span class="innertxt">给付申请人10217元</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="text_table">
+                            <tbody>
+                            <tr>
+                                <td><span class="innertxt">被执行人</span></td>
+                                <td><span class="innertxt">天津信裕房地产发展有限公司</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">身份证号码/组织机构代码</span></td>
+                                <td><span class="innertxt">60056316-5</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">案号</span></td>
+                                <td><span class="innertxt">(2019)津0103执3198号</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">执行法院</span></td>
+                                <td><span class="innertxt">天津市河西区人民法院</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">立案时间</span></td>
+                                <td><span class="innertxt"> 2018-03-02</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">执行标的</span></td>
+                                <td><span class="innertxt">0</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="text_table">
+                            <tbody>
+                            <tr>
+                                <td><span class="innertxt">行政处罚决定书文号</span></td>
+                                <td><span class="innertxt">京工商海处字【2018】第2286号  </span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">名称</span></td>
+                                <td><span class="innertxt">北京百度网讯科技有限公司</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">注册号</span></td>
+                                <td><span class="innertxt">60056316-5</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">法定代表人（负责人）</span></td>
+                                <td><span class="innertxt">张三</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">违法行为类型</span></td>
+                                <td><span class="innertxt">021002</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">行政处罚内容</span></td>
+                                <td><span class="innertxt">1，没收广告费用26220.46元 2，罚款600000元</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">作出行政处罚决定机关名称</span></td>
+                                <td><span class="innertxt">北京市工商行政管理局海淀分局</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">作出行政处罚决定日期</span></td>
+                                <td><span class="innertxt">2018-11-20</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">公示日期</span></td>
+                                <td><span class="innertxt">2018-11-20</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">描述</span></td>
+                                <td><span class="innertxt">所报材料真实合法，一切责任由当事人自负。</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="text_table">
+                            <tbody>
+                            <tr>
+                                <td><span class="innertxt">列入原因</span></td>
+                                <td><span class="innertxt">被列入经营异常名录届满3年仍未履行相关义务的</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">列入日期</span></td>
+                                <td><span class="innertxt">2017-10-13 </span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">决定列入部门(作出决定机关)</span></td>
+                                <td><span class="innertxt">深圳市市场和质量监督管理委员会福田局</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">移除原因</span></td>
+                                <td><span class="innertxt">-</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">移除日期</span></td>
+                                <td><span class="innertxt">-</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">决定移除部门</span></td>
+                                <td><span class="innertxt">-</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">类别</span></td>
+                                <td><span class="innertxt">-</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">违法事实</span></td>
+                                <td><span class="innertxt">-</span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="text_table">
+                            <tbody>
+                            <tr>
+                                <td><span class="innertxt">登记编号</span></td>
+                                <td><span class="innertxt">A1503029628</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">省份</span></td>
+                                <td><span class="innertxt">安徽省</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">出质人</span></td>
+                                <td><span class="innertxt">2017-10-13</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">证照/证件号码</span></td>
+                                <td><span class="innertxt">-</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">出质股权数额</span></td>
+                                <td><span class="innertxt">-</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">质权人</span></td>
+                                <td><span class="innertxt">-</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">证照/证件号码</span></td>
+                                <td><span class="innertxt">-</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">股权出质设立登记日期</span></td>
+                                <td><span class="innertxt">2015-12-11</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">状态</span></td>
+                                <td><span class="innertxt">有效</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">公示日期</span></td>
+                                <td><span class="innertxt">2015-12-11</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">变更情况</span></td>
+                                <td><span class="innertxt">无</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">注销日期</span></td>
+                                <td><span class="innertxt">-</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="innertxt">注销原因</span></td>
+                                <td><span class="innertxt"></span></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="event-ts"><span>*</span>智侒信和网页<i>http://www.ahyouth.com/news/20190510/1379921.shtml</i>的作者无关，不对其内容负责。</div>
+                </div>
+            </div>
+            <div class="detail_info">
+                <!--涉及关键词 start-->
+                <div class="same_info keyword">
+                    <div class="title">
+                        <b></b>
+                        涉及关键词
+                        <div class="close" the-id="close_keyword">收起</div>
+                    </div>
+                    <div class="w_slidecon">
+                        <a href="javascript:void(0)" class="keywordList">安徽省</a>
+                        <a href="javascript:void(0)" class="keywordList">绩溪县</a>
+                        <a href="javascript:void(0)" class="keywordList">安徽</a>
+                        <a href="javascript:void(0)" class="keywordList">环境质量</a>
+                        <a href="javascript:void(0)" class="keywordList">氨氮</a>
+                        <a href="javascript:void(0)" class="keywordList">化学需氧量</a>
+                    </div>
+                </div>
+                <!--涉及关键词 end-->
+                <!--涉及专题 start-->
+                <div class="same_info special">
+                    <div class="title">
+                        <b></b>
+                        涉及专题
+                        <div class="close" the-id="close_special">收起</div>
+                    </div>
+                    <div class="div1 w_slidecon">
+                        <a href="" target="_blank" class="" title="污染舆情">污染舆情</a>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!--涉及专题 end-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--返回顶部按钮-->
+<div class="yqms_sidebar_box" onclick="gototop()"><div class="to_top_box border_box"><div class="to_top"></div></div></div>
+<script>
+    /*右侧关键词展开收起*/
+    $("body").on("click",".same_info .close", function () {
+        var e = $(this),
+            t = $(this).closest(".same_info").find(".w_slidecon");
+        e.hasClass("open") ? (e.removeClass("open"), e.text("收起"))   : (e.addClass("open"), e.text("展开")), t.slideToggle()
+    })
+    /*左侧分享hover效果*/
+    $(".eight").on({
+        mouseenter:function () {
+            $("[the-id=sharecontent]").css("display", "block")
+        },
+        mouseleave:function () {
+            $("[the-id=sharecontent]").css("display", "none")
+        }})
+    /*左侧点击关注效果*/
+    $("body").on("click",".attention_btn",function () {
+        var e = $(this);
+        e.hasClass("actived")?(e.removeClass("actived"), e.find(".txt").text("加关注")):(e.addClass("actived"), e.find(".txt").text("已关注"))
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>个人中心-我的收藏</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="../css/public.css"  media="all">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../layui/layui.js" charset="utf-8"></script>
+    <script src="../js/public.js"></script>
+</head>
+<body style="background-color: #f2f2f2;">
+    <div class="mainbox">
+        <div class="po-header">
+            <div class="po-nav">
+                <div class="po-logo">
+                    <a href="../index.html"><img src="../images/zaxlogowhite.png" alt=""></a>
+                </div>
+                <ul class="po-navlist">
+                    <li class="nav-cell actived"><a href="../browse/index.html" class="">舆情浏览</a></li>
+                    <li class="nav-cell"><a href="../browse/index-push.html" class="">舆情推送</a></li>
+                </ul>
+                <div class="userinfo togglebtn" onclick="toggleul(this)">
+                    <span class="user-name">AHSR</span>
+                    <span class="arrow-btn iconfont iconjiantouxia"></span>
+                    <ul class="clearfix user-opt togglebox" style="display: none;">
+                        <li><a href="" class="../personal/personal.html"> <i class="iconfont iconmenu_wd"></i><i>个人中心</i></a></li>
+                        <li><a href="javascript:;"><i class="iconfont icontuichu"></i><i>退出登录</i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-wrapper" style="padding-left: 0;">
+            <!--设置左侧导航-->
+            <div class="set-nav">
+                <div class="tit">系统设置</div>
+                <ul class="nav">
+                    <li class="li1"><a class="" href="personal.html">专题设置</a>
+                        <i></i>
+                    </li>
+                    <li class="li2"><a class="" href="personal_user.html">用户设置</a>
+                        <i></i>
+                    </li>
+                    <li class="li3"><a class="hover" href="personal_collection.html">我的收藏</a>
+                        <i></i>
+                    </li>
+                    <li class="li4"><a class="" href="personal_shangb.html">我的上报</a>
+                        <i></i>
+                    </li>
+                </ul>
+            </div>
+            <!--设置左侧导航 end-->
+
+            <!--设置内容-->
+            <div class="set-infowary">
+                <div class="set-cons1">
+                    <div class="classification_wrap1">
+                        <div style="background-color: #fff;">
+                            <div style="padding: 0 10px;">
+                                <div class="yq-con-top2 clearfix">
+                                    <ul class="left-items clearfix">
+                                        <li class="item-tab actived">企业舆情</li>
+                                        <li class="item-tab">司法风险</li>
+                                    </ul>
+                                    <div class="right-search">
+                                        <div class="search-range togglebtn" onclick="toggleul(this)">
+                                            <span class="rs-txt">全文</span>
+                                            <span class="arrow-btn iconfont icontriangle-down"></span>
+                                            <ul class="range-list togglebox" style="display: none">
+                                                <li class="range-cell actived">全文</li>
+                                                <li class="range-cell">标题</li>
+                                                <li class="range-cell hidecell">来源</li>
+                                                <li class="range-cell hidecell">作者</li>
+                                            </ul>
+                                        </div>
+                                        <input type="text">
+                                        <span class="search-btn iconfont iconsearch"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="layui-form tab-content actived" action="">
+                                <!-- 信息list -->
+                                <div class="yq_news_list">
+                                    <div class="info_opt_wrapper clearfix">
+                                        <div class="left_checkall">
+                                            <input type="checkbox" name="all_check" lay-skin="primary" lay-filter="all_check" title="全选" >
+                                            <span class="cancel_collect">取消收藏</span>
+                                        </div>
+                                        <div class="right_opts fr">
+                                            <div class="check_box" style="display: inline-block">
+                                                <input type="checkbox" name="" lay-skin="primary" lay-filter="hideabs" title="隐藏摘要" >
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <select name="sort" lay-filter="sort">
+                                                    <option value=""></option>
+                                                    <option value="0" selected="">按时间</option>
+                                                    <option value="1" >按热度</option>
+                                                </select>
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <select name="sort" lay-filter="sort">
+                                                    <option value=""></option>
+                                                    <option value="0" selected="">每页20条</option>
+                                                    <option value="1">每页50条</option>
+                                                    <option value="1">每页100条</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="message_list">
+                                        <ul class="clearfix">
+                                            <li class="message other">
+                                                <div class="all_checkbox">
+                                                    <input type="checkbox" name="message_check" lay-filter="messageck" lay-skin="primary" title="" >
+                                                    <div class="ribbons z"></div>
+                                                </div>
+                                                <div class="photo">
+                                                    <img src="../images/message_img.jpg" alt="">
+                                                </div>
+                                                <div class="content_right new_data">
+                                                    <div class="top_message">
+                                                        <div class="title_text">
+                                                            <div class="title">
+                                                                <a href="info_detail.html" target="_blank">
+                                                                    1. <span>拟提拔多名干部，多名与林州有关！</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pic article_title"><span class="identical"><em>3</em>条</span></div>
+                                                    </div>
+                                                    <!--摘要-->
+                                                    <div class="list_message ">
+                                                        现将有关情况公示如下，请予监督：李承毅，男，1964年7月生，林州市人，大学文化程度，现任林州市住建局党组书记、局长，2007年7月任现级，李茂生，男，1969年7月生，林州市人，大专文化程度，现任林州市财政局党组书记、局长，2007年4月任现级，栗强云，男，1973年6月生，林州市人，党校大学文化程度，现任林州市姚村镇党委书记，2005年3月任现级，雷涛，男，1978年10月生，安阳县人，党校大
+                                                    </div>
+                                                    <!--时间作者来源关键词-->
+                                                    <div class="url_wrap">
+                                                        <div class="address">
+                                                            <em>2019-05-10 14:01</em>
+                                                            <!--头像-->
+                                                            <em class="weibo_photo"><img src="../images/noIdimg.png"></em>
+                                                            <!--名称-->
+                                                            <em style="cursor:pointer;">林州趣闻</em>
+                                                            <!--来源-->
+                                                            <em>
+                                                                <a href="" class="viewMore" target="_blank" style="width: auto;">微信</a>
+                                                            </em>
+                                                            <!--关键词-->
+                                                            <em style="color:#ff0000;" title="经济开发区,环保局局长">经济开发区,环保局局长</em>
+                                                        </div>
+                                                        <!--一堆图标-->
+                                                        <ul class="pic_list pic_list_new1_newico">
+                                                            <li class="collect_ico"></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="message">
+                                                <div class="all_checkbox">
+                                                    <input type="checkbox" name="message_check" lay-filter="messageck" lay-skin="primary" title="" >
+                                                    <div class="ribbons"></div>
+                                                </div>
+                                                <!--<div class="photo"></div>-->
+                                                <div class="content_right new_data">
+                                                    <div class="top_message">
+                                                        <div class="title_text">
+                                                            <div class="title">
+                                                                <a href="" target="_blank">
+                                                                    1. <span>拟提拔多名干部，多名与林州有关！</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pic article_title"><span class="identical"><em>3</em>条</span></div>
+                                                    </div>
+                                                    <!--摘要-->
+                                                    <div class="list_message ">
+                                                        现将有关情况公示如下，请予监督：李承毅，男，1964年7月生，林州市人，大学文化程度，现任林州市住建局党组书记、局长，2007年7月任现级，李茂生，男，1969年7月生，林州市人，大专文化程度，现任林州市财政局党组书记、局长，2007年4月任现级，栗强云，男，1973年6月生，林州市人，党校大学文化程度，现任林州市姚村镇党委书记，2005年3月任现级，雷涛，男，1978年10月生，安阳县人，党校大
+                                                    </div>
+                                                    <!--时间作者来源关键词-->
+                                                    <div class="url_wrap">
+                                                        <div class="address">
+                                                            <em>2019-05-10 14:01</em>
+                                                            <!--头像-->
+                                                            <em class="weibo_photo"><img src="../images/noIdimg.png"></em>
+                                                            <!--名称-->
+                                                            <em style="cursor:pointer;">林州趣闻</em>
+                                                            <!--来源-->
+                                                            <em>
+                                                                <a href="" class="viewMore" target="_blank" style="width: auto;">微信</a>
+                                                            </em>
+                                                            <!--关键词-->
+                                                            <em style="color:#ff0000;" title="经济开发区,环保局局长">经济开发区,环保局局长</em>
+                                                        </div>
+                                                        <!--一堆图标-->
+                                                        <ul class="pic_list pic_list_new1_newico">
+                                                            <li class="collect_ico actived"></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="message">
+                                                <div class="all_checkbox">
+                                                    <input type="checkbox" name="message_check" lay-filter="messageck" lay-skin="primary" title="" >
+                                                    <div class="ribbons f"></div>
+                                                </div>
+                                                <!--<div class="photo"></div>-->
+                                                <div class="content_right new_data">
+                                                    <div class="top_message">
+                                                        <div class="title_text">
+                                                            <div class="title">
+                                                                <a href="" target="_blank">
+                                                                    1. <span>拟提拔多名干部，多名与林州有关！</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pic article_title"><span class="identical"><em>3</em>条</span></div>
+                                                    </div>
+                                                    <!--摘要-->
+                                                    <div class="list_message ">
+                                                        现将有关情况公示如下，请予监督：李承毅，男，1964年7月生，林州市人，大学文化程度，现任林州市住建局党组书记、局长，2007年7月任现级，李茂生，男，1969年7月生，林州市人，大专文化程度，现任林州市财政局党组书记、局长，2007年4月任现级，栗强云，男，1973年6月生，林州市人，党校大学文化程度，现任林州市姚村镇党委书记，2005年3月任现级，雷涛，男，1978年10月生，安阳县人，党校大
+                                                    </div>
+                                                    <!--时间作者来源关键词-->
+                                                    <div class="url_wrap">
+                                                        <div class="address">
+                                                            <em>2019-05-10 14:01</em>
+                                                            <!--头像-->
+                                                            <em class="weibo_photo"><img src="../images/noIdimg.png"></em>
+                                                            <!--名称-->
+                                                            <em style="cursor:pointer;">林州趣闻</em>
+                                                            <!--来源-->
+                                                            <em>
+                                                                <a href="" class="viewMore" target="_blank" style="width: auto;">微信</a>
+                                                            </em>
+                                                            <!--关键词-->
+                                                            <em style="color:#ff0000;" title="经济开发区,环保局局长">经济开发区,环保局局长</em>
+                                                        </div>
+                                                        <!--一堆图标-->
+                                                        <ul class="pic_list pic_list_new1_newico">
+                                                            <li class="collect_ico"></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- 信息list end -->
+                            </form>
+                            <form class="layui-form tab-content" action="">
+                                <!-- 信息list -->
+                                <div class="yq_news_list">
+                                    <div class="info_opt_wrapper clearfix">
+                                        <div class="left_checkall">
+                                            <input type="checkbox" name="all_check" lay-skin="primary" lay-filter="all_check" title="全选" >
+                                            <span class="cancel_collect">取消收藏</span>
+                                        </div>
+                                        <div class="right_opts fr">
+                                            <div class="check_box" style="display: inline-block">
+                                                <input type="checkbox" name="" lay-skin="primary" lay-filter="hideabs" title="隐藏摘要" >
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <select name="sort" lay-filter="sort">
+                                                    <option value=""></option>
+                                                    <option value="0" selected="">按时间</option>
+                                                    <option value="1" >按热度</option>
+                                                </select>
+                                            </div>
+                                            <div class="layui-input-inline">
+                                                <select name="sort" lay-filter="sort">
+                                                    <option value=""></option>
+                                                    <option value="0" selected="">每页20条</option>
+                                                    <option value="1">每页50条</option>
+                                                    <option value="1">每页100条</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="message_list">
+                                        <ul class="clearfix">
+                                            <li class="message other">
+                                                <div class="all_checkbox">
+                                                    <input type="checkbox" name="message_check" lay-filter="messageck" lay-skin="primary" title="" >
+                                                    <div class="ribbons z"></div>
+                                                </div>
+                                                <div class="photo">
+                                                    <img src="../images/message_img.jpg" alt="">
+                                                </div>
+                                                <div class="content_right new_data">
+                                                    <div class="top_message">
+                                                        <div class="title_text">
+                                                            <div class="title">
+                                                                <a href="" target="_blank">
+                                                                    1. <span>拟提拔多名干部，多名与林州有关！</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pic article_title">
+                                                            <span class="ms_type">招投标</span>
+                                                        </div>
+                                                    </div>
+                                                    <!--摘要-->
+                                                    <div class="list_message ">
+                                                        现将有关情况公示如下，请予监督：李承毅，男，1964年7月生，林州市人，大学文化程度，现任林州市住建局党组书记、局长，2007年7月任现级，李茂生，男，1969年7月生，林州市人，大专文化程度，现任林州市财政局党组书记、局长，2007年4月任现级，栗强云，男，1973年6月生，林州市人，党校大学文化程度，现任林州市姚村镇党委书记，2005年3月任现级，雷涛，男，1978年10月生，安阳县人，党校大
+                                                    </div>
+                                                    <!--时间作者来源关键词-->
+                                                    <div class="url_wrap">
+                                                        <div class="address">
+                                                            <em>2019-05-10 14:01</em>
+                                                            <!--头像-->
+                                                            <em class="weibo_photo"><img src="../images/noIdimg.png"></em>
+                                                            <!--名称-->
+                                                            <em style="cursor:pointer;">林州趣闻</em>
+                                                            <!--来源-->
+                                                            <em>
+                                                                <a href="" class="viewMore" target="_blank" style="width: auto;">微信</a>
+                                                            </em>
+                                                            <!--关键词-->
+                                                            <em style="color:#ff0000;" title="经济开发区,环保局局长">经济开发区,环保局局长</em>
+                                                        </div>
+                                                        <!--一堆图标-->
+                                                        <ul class="pic_list pic_list_new1_newico">
+                                                            <li class="collect_ico"></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="message">
+                                                <div class="all_checkbox">
+                                                    <input type="checkbox" name="message_check" lay-filter="messageck" lay-skin="primary" title="" >
+                                                    <div class="ribbons"></div>
+                                                </div>
+                                                <!--<div class="photo"></div>-->
+                                                <div class="content_right new_data">
+                                                    <div class="top_message">
+                                                        <div class="title_text">
+                                                            <div class="title">
+                                                                <a href="" target="_blank">
+                                                                    1. <span>拟提拔多名干部，多名与林州有关！</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pic article_title">
+                                                            <span class="ms_type">工商变更</span>
+                                                        </div>
+                                                    </div>
+                                                    <!--摘要-->
+                                                    <div class="list_message ">
+                                                        现将有关情况公示如下，请予监督：李承毅，男，1964年7月生，林州市人，大学文化程度，现任林州市住建局党组书记、局长，2007年7月任现级，李茂生，男，1969年7月生，林州市人，大专文化程度，现任林州市财政局党组书记、局长，2007年4月任现级，栗强云，男，1973年6月生，林州市人，党校大学文化程度，现任林州市姚村镇党委书记，2005年3月任现级，雷涛，男，1978年10月生，安阳县人，党校大
+                                                    </div>
+                                                    <!--时间作者来源关键词-->
+                                                    <div class="url_wrap">
+                                                        <div class="address">
+                                                            <em>2019-05-10 14:01</em>
+                                                            <!--头像-->
+                                                            <em class="weibo_photo"><img src="../images/noIdimg.png"></em>
+                                                            <!--名称-->
+                                                            <em style="cursor:pointer;">林州趣闻</em>
+                                                            <!--来源-->
+                                                            <em>
+                                                                <a href="" class="viewMore" target="_blank" style="width: auto;">微信</a>
+                                                            </em>
+                                                            <!--关键词-->
+                                                            <em style="color:#ff0000;" title="经济开发区,环保局局长">经济开发区,环保局局长</em>
+                                                        </div>
+                                                        <!--一堆图标-->
+                                                        <ul class="pic_list pic_list_new1_newico">
+                                                            <li class="collect_ico actived"></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="message">
+                                                <div class="all_checkbox">
+                                                    <input type="checkbox" name="message_check" lay-filter="messageck" lay-skin="primary" title="" >
+                                                    <div class="ribbons f"></div>
+                                                </div>
+                                                <!--<div class="photo"></div>-->
+                                                <div class="content_right new_data">
+                                                    <div class="top_message">
+                                                        <div class="title_text">
+                                                            <div class="title">
+                                                                <a href="" target="_blank">
+                                                                    1. <span>拟提拔多名干部，多名与林州有关！</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pic article_title"> <span class="ms_type">法院公告</span></div>
+                                                    </div>
+                                                    <!--摘要-->
+                                                    <div class="list_message ">
+                                                        现将有关情况公示如下，请予监督：李承毅，男，1964年7月生，林州市人，大学文化程度，现任林州市住建局党组书记、局长，2007年7月任现级，李茂生，男，1969年7月生，林州市人，大专文化程度，现任林州市财政局党组书记、局长，2007年4月任现级，栗强云，男，1973年6月生，林州市人，党校大学文化程度，现任林州市姚村镇党委书记，2005年3月任现级，雷涛，男，1978年10月生，安阳县人，党校大
+                                                    </div>
+                                                    <!--时间作者来源关键词-->
+                                                    <div class="url_wrap">
+                                                        <div class="address">
+                                                            <em>2019-05-10 14:01</em>
+                                                            <!--头像-->
+                                                            <em class="weibo_photo"><img src="../images/noIdimg.png"></em>
+                                                            <!--名称-->
+                                                            <em style="cursor:pointer;">林州趣闻</em>
+                                                            <!--来源-->
+                                                            <em>
+                                                                <a href="" class="viewMore" target="_blank" style="width: auto;">微信</a>
+                                                            </em>
+                                                            <!--关键词-->
+                                                            <em style="color:#ff0000;" title="经济开发区,环保局局长">经济开发区,环保局局长</em>
+                                                        </div>
+                                                        <!--一堆图标-->
+                                                        <ul class="pic_list pic_list_new1_newico">
+                                                            <li class="collect_ico"></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- 信息list end -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--设置内容 end-->
+        </div>
+    </div>
+    <script>
+        /*tab 切换*/
+        $("body").on("click", ".item-tab ", function () {
+            console.log("1")
+            $(this).addClass("actived").siblings(".item-tab").removeClass("actived");
+            $(".tab-content").removeClass("actived");
+            $(".tab-content").eq($(this).index()).addClass("actived");
+            var tabtxt = $(this).text();
+            if(tabtxt == "企业舆情"){
+                $(".hidecell").show()
+            }else{
+                $(".hidecell").hide()
+            }
+        })
+        /*文章下拉筛选项选择*/
+        $("body").on("click",".range-cell",function () {
+            var rsobj = $(this).closest(".togglebtn").find(".rs-txt");
+            var cuTxt = $(this).text();
+            rsobj.text(cuTxt);
+        })
+    </script>
+    <script>
+        layui.use(['form', 'layedit', 'laydate', 'layer', 'element'], function() {
+            var $ = layui.jquery
+                , element = layui.element
+                ,laydate = layui.laydate
+                ,form = layui.form
+                ,layer =layui.layer;
+            //日期范围
+            laydate.render({
+                elem: '#test6'
+                ,range: true
+            });
+            laydate.render({
+                elem: '#test7'
+                ,range: true
+            });
+            /*隐藏摘要*/
+            form.on('checkbox(hideabs)', function(data){
+                var listms = $(this).closest(".yq_news_list").find(".list_message");
+                if(data.elem.checked){
+                    listms.slideUp()
+                }else{
+                    listms.slideDown()
+                }
+            });
+            /*全选全不选*/
+            var check = null;
+            var arr = [];
+            form.on('checkbox(all_check)', function(data){
+                var child = $(this).closest(".yq_news_list").find(':checkbox[name="message_check"]');
+                child.each(function(index, item){
+                    item.checked = data.elem.checked;
+                });
+                form.render('checkbox');
+            });
+            form.on('checkbox(messageck)', function (data) {
+                var child = $(this).closest(".yq_news_list").find(':checkbox[name="message_check"]');
+                arr = [];
+                child.each(function(index, item){
+                    arr.push(item.checked+'')
+                });
+                var b = arr.indexOf("false");
+                if(data.elem.checked == false){
+                    check = false
+                    $(this).closest(".yq_news_list").find(':checkbox[name="all_check"]').prop("checked", false);
+                    form.render('checkbox');
+                }else if(b == -1){
+                    $(this).closest(".yq_news_list").find(':checkbox[name="all_check"]').prop("checked", true);
+                    form.render('checkbox');
+                }
+            })
+
+            /*专题编辑--数据来源全选与反选*/
+            /*全选*/
+            form.on('radio(ds_chekall)', function(data){
+                $(this).closest(".layui-form-item").find(':checkbox[name="ds"]').prop("checked", true)
+                form.render('checkbox');
+            });
+            /*反选*/
+            form.on('radio(ds_inverse)', function(data){
+                var child = $(this).closest(".layui-form-item").find(':checkbox[name="ds"]');
+                child.each(function (index, item) {
+                    item.checked == true?item.checked = false:item.checked = true;
+                });
+                form.render('checkbox');
+            });
+
+
+        })
+    </script>
+</body>
+</html>
