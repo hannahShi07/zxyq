@@ -14,12 +14,13 @@
     <script type="text/javascript" src="../js/jquery.ztree.core.js"></script>
     <script type="text/javascript" src="../js/jquery.ztree.exedit.js"></script>
     <script src="../layui/layui.js" charset="utf-8"></script>
-    <script src="../js/public.js"></script>
     <script type="text/javascript">
-        <!--
         var setting = {
             view: {
                 selectedMulti: false
+            },
+            callback: {
+                onClick: zTreeOnClick
             }
         };
 
@@ -34,8 +35,11 @@
 
         $(document).ready(function(){
             $.fn.zTree.init($("#tree1"), setting, zNodes);
+
         });
-        //-->
+        function zTreeOnClick(event, treeId, treeNode) {
+            alert(treeNode.tId + ", " + treeNode.name);
+        };
     </script>
 </head>
 <body style="background-color: #f2f2f2;">
@@ -231,7 +235,9 @@
                                             </li>
 
                                         </ul>
-
+                                       <div style="text-align: right;padding-right: 20px;">
+                                           <button class="layui-btn layui-btn-normal">保存</button>
+                                       </div>
                                     </form>
                                 </div>
                             </div>
@@ -358,6 +364,7 @@
         </form>
     </div>
     <!--专题编辑内容 end-->
+    <script src="../js/public.js"></script>
     <script>
         /*专题分类设置--点击添加*/
         $("body").on("click", ".append", function () {
