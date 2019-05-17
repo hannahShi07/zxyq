@@ -441,13 +441,13 @@ div .layui-laydate-footer span[lay-type=date] {
     position: absolute;
     left: 0;
     top: 0px;
-    width: 120px;
+    width: 100px;
     font-weight: 700;
     font-size: 14px;
 }
 .condition-wrapper .condition_con {
     width: 100%;
-    padding-left: 120px;
+    padding-left: 100px;
     padding-right: 80px;
     position: relative;
 }
@@ -472,6 +472,7 @@ div .layui-laydate-footer span[lay-type=date] {
 .condition-wrapper .text_title .pic {
     float: left;
     margin-top: 11px;
+    display: none;
 }
 .condition-wrapper .text_title .title {
     float: left;
@@ -480,7 +481,7 @@ div .layui-laydate-footer span[lay-type=date] {
 }
 .condition_con .c_cell,.c_cell_more {
     float: left;
-    margin-top: 5px;
+    margin-top: 3px;
     margin-left: 15px;
     padding: 0 10px;
     height: 30px;
@@ -1859,4 +1860,21 @@ li .main_content .title_text {
 }
 .message.other .ribbons {
     left: 168px;
+}
+.lev2 {
+    position: relative;
+}
+.lev2 .lev-label {
+    position: absolute;
+    width: 80px;
+    left: 0;
+    top: -3px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #666;
+    text-indent: 10px;
+    line-height: 40px;
+}
+.lev2 .condition_cells {
+    padding-left: 80px;
 }
